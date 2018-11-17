@@ -7,9 +7,9 @@ public class Contenido {
     private Grupo grupo;
 
     public Contenido(){
-        this.idLectura= 0;
-        this.estado ="";
-        this.texto="";
+        this.idLectura = 0;
+        this.estado = "";
+        this.texto = "";
         this.imagen = new ImageIcon();
         this.grupo = new Grupo();
         this.nDescargas = 0;
@@ -19,7 +19,7 @@ public class Contenido {
         String[]sp = datos.split("_");
         this.idLectura = Integer.parseInt(sp[0]);
         this.estado = sp[1];
-        this.texto=sp[2];
+        this.texto = sp[2];
         this.nDescargas = Integer.parseInt(sp[3]);
         this.imagen = img;
         this.grupo = group;

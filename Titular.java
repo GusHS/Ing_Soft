@@ -1,25 +1,69 @@
 import java.util.List;
 
+import com.sun.javafx.collections.FloatArraySyncer;
+
 public class Titular {
     private int id;
     private String nombre, tipo;
     private List<Grupo> lGrupos;
-    private List<Contenidos> listaContenidos;
+    private List<Contenido> lContenidos;
     private float avanceTitular;
-    private Institucion institucion;
 
     public Titular(){
-        id = 0;
-        nombre ="";
-        tipo = "";
-
+        this.id = 0;
+        this.nombre ="";
+        this.tipo = "";
+        this.lGrupos = new List<Grupo>();
+        this.lContenidos = new List<Contenido>();
+        this.avanceTitular = 0;
     }
 
-    public Titular(String datos){
-        String[] sp = datos.split("_");
-        id = Integer.parseInt(sp[0]);
-        nombre = sp[1].toUpperCase();
-        tipo = sp[2].toUpperCase();
+    public Titular(String datos, List<Grupo> lGroups, List<Contenido> lContent){
+        String sp[] = datos.split("_");
+        this.id = Integer.parseInt(sp[0]);
+        this.nombre = sp[1];
+        this.tipo = sp[2];
+        this.avanceTitular = Float.parseFloat(sp[3]);
+        this.lGrupos = lGroups;
+        this.lContenidos = lContent;
+    }
+
+    public int getId(){
+        return this.id;
+    }
+    public String getNombre(){
+        return this.nombre;
+    }
+    public String getTipo(){
+        return this.tipo;
+    }
+    public float getAvanceTitular(){
+        return this.avanceTitular;
+    }
+    public List<Grupo> getListaGrupos(){
+        return this.lGrupos;
+    }
+    public List<Contenido> getListaContenidos(){
+        return this.lContenidos;
+    }
+
+    public void setId(int num){
+        this.id = num;
+    }
+    public void getNombre(String nom){
+        this.nombre = nom;
+    }
+    public void getTipo(String type){
+        this.tipo = type;
+    }
+    public void getAvanceTitular(float av){
+        this.avanceTitular = av;
+    }
+    public void getListaGrupos(List<Grupo> lGroup){
+        this.lGrupos = lGroup;
+    }
+    public void getListaContenidos(List<Contenido> lContent){
+        this.lContenidos = lContent;
     }
     
 }
