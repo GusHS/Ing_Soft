@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.LinkedList;
 
 public class Institucion {
     private List<Grupo> lGrupos;
@@ -6,8 +7,8 @@ public class Institucion {
     private float avanceInstitucional;
 
     public Institucion(){
-        this.lGrupos = new List<Grupo>();
-        this.lTitulares = new List<Titular>();
+        this.lGrupos = new LinkedList<Grupo>();
+        this.lTitulares = new LinkedList<Titular>();
         this.avanceInstitucional = 0;
     }
 

@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 import com.sun.javafx.collections.FloatArraySyncer;
@@ -13,8 +14,8 @@ public class Titular {
         this.id = 0;
         this.nombre ="";
         this.tipo = "";
-        this.lGrupos = new List<Grupo>();
-        this.lContenidos = new List<Contenido>();
+        this.lGrupos = new LinkedList<Grupo>();
+        this.lContenidos = new LinkedList<Contenido>();
         this.avanceTitular = 0;
     }
 

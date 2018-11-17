@@ -6,7 +6,7 @@ public class Alumno {
     public Alumno(){
         this.id = 0;
         this.nombre = "";
-        this.avance = 0.0;
+        this.avance = 0;
         this.grado = 0;
     }
     public Alumno(String datos){

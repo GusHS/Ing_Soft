@@ -1,3 +1,4 @@
+import java.util.LinkedList;
 import java.util.List;
 
 public class Grupo {
@@ -5,7 +6,7 @@ public class Grupo {
     private float avanceGeneral;
 
     public Grupo(){
-        this.lAlumnos = new List<Alumno>();
+        this.lAlumnos = new LinkedList<Alumno>();
         this.avanceGeneral = 0;
     }
 
@@ -21,7 +22,7 @@ public class Grupo {
         return this.avanceGeneral;
     }
 
-    public void setListaAlumnos(Lista<Alumno> lAlumn){
+    public void setListaAlumnos(List<Alumno> lAlumn){
         this.lAlumnos = lAlumn;
     }
     public void setAvanceGeneral(float avance){
