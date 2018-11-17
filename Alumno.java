@@ -29,7 +29,7 @@ public class Alumno {
     public int getGrado(){
         return this.grado;
     }
-
+    
     public void setId(int i){
         this.id = i;
     }
