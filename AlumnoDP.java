@@ -1,23 +1,23 @@
 public class AlumnoDP {
-    private int id, grado;
-    private String nombre;
+    private int grado;
+    private String nombre, id;
     private float avance;
 
     public AlumnoDP(){
-        this.id = 0;
+        this.id = "";
         this.nombre = "";
         this.avance = 0;
         this.grado = 0;
     }
     public AlumnoDP(String datos){
         String[] sp = datos.split("_");
-        this.id = Integer.parseInt(sp[0]);
+        this.id = sp[0];
         this.nombre = sp[1];
         this.avance = Float.parseFloat(sp[2]);
         this.grado = Integer.parseInt(sp[3]);
     }
 
-    public int getId(){
+    public String getId(){
         return this.id;
     }
     public String getNombre(){
@@ -30,7 +30,7 @@ public class AlumnoDP {
         return this.grado;
     }
     
-    public void setId(int i){
+    public void setId(String i){
         this.id = i;
     }
     public void setNombre(String nom){
@@ -41,6 +41,10 @@ public class AlumnoDP {
     }
     public void setGrado(int deg){
         this.grado = deg;
+    }
+
+    public String toString(){
+        return id+nombre+avance+grado;
     }
     
 }
