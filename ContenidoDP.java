@@ -22,7 +22,7 @@ public class ContenidoDP {
         this.grado = Integer.parseInt(sp[1]);
         this.estado = sp[2];
         this.titulo= sp[3];
-        this.nDescargas = Integer.parseInt(sp[5]);
+        this.nDescargas = Integer.parseInt(sp[4]);
         this.imagen = img;
         this.grupo = group;
     }
