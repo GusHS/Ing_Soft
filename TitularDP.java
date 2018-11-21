@@ -1,23 +1,23 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class Titular {
+public class TitularDP {
     private int id;
     private String nombre, tipo;
-    private List<Grupo> lGrupos;
-    private List<Contenido> lContenidos;
+    private List<GrupoDP> lGrupos;
+    private List<ContenidoDP> lContenidos;
     private float avanceTitular;
 
-    public Titular(){
+    public TitularDP(){
         this.id = 0;
         this.nombre ="";
         this.tipo = "";
-        this.lGrupos = new LinkedList<Grupo>();
-        this.lContenidos = new LinkedList<Contenido>();
+        this.lGrupos = new LinkedList<GrupoDP>();
+        this.lContenidos = new LinkedList<ContenidoDP>();
         this.avanceTitular = 0;
     }
 
-    public Titular(String datos, List<Grupo> lGroups, List<Contenido> lContent){
+    public TitularDP(String datos, List<GrupoDP> lGroups, List<ContenidoDP> lContent){
         String sp[] = datos.split("_");
         this.id = Integer.parseInt(sp[0]);
         this.nombre = sp[1];
@@ -39,10 +39,10 @@ public class Titular {
     public float getAvanceTitular(){
         return this.avanceTitular;
     }
-    public List<Grupo> getListaGrupos(){
+    public List<GrupoDP> getListaGrupos(){
         return this.lGrupos;
     }
-    public List<Contenido> getListaContenidos(){
+    public List<ContenidoDP> getListaContenidos(){
         return this.lContenidos;
     }
 
@@ -58,10 +58,10 @@ public class Titular {
     public void getAvanceTitular(float av){
         this.avanceTitular = av;
     }
-    public void getListaGrupos(List<Grupo> lGroup){
+    public void getListaGrupos(List<GrupoDP> lGroup){
         this.lGrupos = lGroup;
     }
-    public void getListaContenidos(List<Contenido> lContent){
+    public void getListaContenidos(List<ContenidoDP> lContent){
         this.lContenidos = lContent;
     }
     

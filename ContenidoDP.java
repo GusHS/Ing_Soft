@@ -1,22 +1,22 @@
 import javax.swing.ImageIcon;
 
-public class Contenido {
+public class ContenidoDP {
     private int idLectura, nDescargas, grado;
-    private String estado, texto;
+    private String estado, titulo;
     private ImageIcon imagen;
-    private Grupo grupo;
+    private GrupoDP grupo;
 
-    public Contenido(){
+    public ContenidoDP(){
         this.idLectura = 0;
         this.grado = 0;
         this.estado = "";
-        this.texto = "";
+        this.titulo = "";
         this.imagen = new ImageIcon();
-        this.grupo = new Grupo();
+        this.grupo = new GrupoDP();
         this.nDescargas = 0;
     }
 
-    public Contenido(String datos, ImageIcon img, Grupo group){
+    public ContenidoDP(String datos, ImageIcon img, GrupoDP group){
         String[]sp = datos.split("_");
         this.idLectura = Integer.parseInt(sp[0]);
         this.grado = Integer.parseInt(sp[1]);
@@ -36,16 +36,13 @@ public class Contenido {
     public String getEstado(){
         return this.estado;
     }
-    public String getTexto(){
-        return this.texto;
-    }
     public String getTitulo(){
         return this.titulo;
     }
     public ImageIcon getImage(){
         return this.imagen;
     }
-    public Grupo getGrupo(){
+    public GrupoDP getGrupo(){
         return this.grupo;
     }
     public int getDescargas(){
@@ -67,7 +64,7 @@ public class Contenido {
     public void getImage(ImageIcon img){
         this.imagen = img;
     }
-    public void setGrupo(Grupo group){
+    public void setGrupo(GrupoDP group){
         this.grupo = group;
     }
     public void setDescargas(int desc){

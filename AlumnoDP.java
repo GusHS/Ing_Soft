@@ -1,15 +1,15 @@
-public class Alumno {
+public class AlumnoDP {
     private int id, grado;
     private String nombre;
     private float avance;
 
-    public Alumno(){
+    public AlumnoDP(){
         this.id = 0;
         this.nombre = "";
         this.avance = 0;
         this.grado = 0;
     }
-    public Alumno(String datos){
+    public AlumnoDP(String datos){
         String[] sp = datos.split("_");
         this.id = Integer.parseInt(sp[0]);
         this.nombre = sp[1];

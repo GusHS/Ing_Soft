@@ -1,28 +1,28 @@
 import java.util.LinkedList;
 import java.util.List;
 
-public class Grupo {
-    private List<Alumno> lAlumnos;
+public class GrupoDP {
+    private List<AlumnoDP> lAlumnos;
     private float avanceGeneral;
 
-    public Grupo(){
-        this.lAlumnos = new LinkedList<Alumno>();
+    public GrupoDP(){
+        this.lAlumnos = new LinkedList<AlumnoDP>();
         this.avanceGeneral = 0;
     }
 
-    public Grupo(List<Alumno> lAlumn, float av){
+    public GrupoDP(List<AlumnoDP> lAlumn, float av){
         this.lAlumnos = lAlumn;
         this.avanceGeneral = av;
     }
 
-    public List<Alumno> getListaAlumnos(){
+    public List<AlumnoDP> getListaAlumnos(){
         return this.lAlumnos;
     }
     public float getAvanceGeneral(){
         return this.avanceGeneral;
     }
 
-    public void setListaAlumnos(List<Alumno> lAlumn){
+    public void setListaAlumnos(List<AlumnoDP> lAlumn){
         this.lAlumnos = lAlumn;
     }
     public void setAvanceGeneral(float avance){
