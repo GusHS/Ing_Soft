@@ -1,8 +1,6 @@
 import java.util.LinkedList;
 import java.util.List;
 
-import com.sun.javafx.collections.FloatArraySyncer;
-
 public class Titular {
     private int id;
     private String nombre, tipo;

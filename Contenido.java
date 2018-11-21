@@ -2,7 +2,7 @@ import javax.swing.ImageIcon;
 
 public class Contenido {
     private int idLectura, nDescargas, grado;
-    private String estado, texto, titulo;
+    private String estado, texto;
     private ImageIcon imagen;
     private Grupo grupo;
 
@@ -11,7 +11,6 @@ public class Contenido {
         this.grado = 0;
         this.estado = "";
         this.texto = "";
-        this.titulo= "";
         this.imagen = new ImageIcon();
         this.grupo = new Grupo();
         this.nDescargas = 0;
@@ -22,8 +21,7 @@ public class Contenido {
         this.idLectura = Integer.parseInt(sp[0]);
         this.grado = Integer.parseInt(sp[1]);
         this.estado = sp[2];
-        this.texto = sp[3];
-        this.titulo= sp[4];
+        this.titulo= sp[3];
         this.nDescargas = Integer.parseInt(sp[5]);
         this.imagen = img;
         this.grupo = group;
@@ -62,9 +60,6 @@ public class Contenido {
     }
     public void setEstado(String status){
         this.estado = status;
-    }
-    public void setTexto(String txt){
-        this.texto = txt;
     }
     public void setTitulo(String title){
         this.titulo = title;
