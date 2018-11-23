@@ -9,6 +9,7 @@ public class AlumnoDP {
         this.avance = 0;
         this.grado = 0;
     }
+    
     public AlumnoDP(String datos){
         String[] sp = datos.split("_");
         this.id = sp[0];
@@ -41,10 +42,6 @@ public class AlumnoDP {
     }
     public void setGrado(int deg){
         this.grado = deg;
-    }
-
-    public String toString(){
-        return id+nombre+avance+grado;
     }
     
 }

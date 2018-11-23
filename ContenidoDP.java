@@ -1,33 +1,52 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.InputStreamReader;
+
 import javax.swing.ImageIcon;
 
 public class ContenidoDP {
-    private int idLectura, nDescargas, grado;
-    private String estado, titulo;
+    private int nDescargas, grado;
+    private String estado, idLectura, titulo, texto;
     private ImageIcon imagen;
     private GrupoDP grupo;
+    private BufferedReader archivoIn;
+    private ImageIcon imageIcon;
 
     public ContenidoDP(){
-        this.idLectura = 0;
+        this.idLectura = "";
         this.grado = 0;
         this.estado = "";
         this.titulo = "";
+        this.texto = "";
         this.imagen = new ImageIcon();
         this.grupo = new GrupoDP();
         this.nDescargas = 0;
     }
 
-    public ContenidoDP(String datos, ImageIcon img, GrupoDP group){
+    public ContenidoDP(String datos, String imagePath, String textPath, GrupoDP group){
         String[]sp = datos.split("_");
-        this.idLectura = Integer.parseInt(sp[0]);
+        String txt="";
+        try {
+            archivoIn = new BufferedReader(new InputStreamReader(new FileInputStream("Lecturas/"+textPath),"UTF-8"));
+            while (archivoIn.ready()) {
+                txt += archivoIn.readLine()+"\n";
+            }
+            archivoIn.close();            
+        } catch (Exception e) {
+            System.out.println("Exception: " + e);
+        }
+        this.idLectura = sp[0];
         this.grado = Integer.parseInt(sp[1]);
         this.estado = sp[2];
         this.titulo= sp[3];
+        this.texto = txt;
         this.nDescargas = Integer.parseInt(sp[4]);
-        this.imagen = img;
+        this.imagen = new ImageIcon(((new ImageIcon("Imagenes/"+imagePath)).getImage()).getScaledInstance(218, 218, java.awt.Image.SCALE_SMOOTH));;
         this.grupo = group;
     }
 
-    public int getIdLectura(){
+    public String getIdLectura(){
         return this.idLectura;
     }
     public int getGrado(){
@@ -39,6 +58,9 @@ public class ContenidoDP {
     public String getTitulo(){
         return this.titulo;
     }
+    public String getTexto(){
+        return this.texto;
+    }
     public ImageIcon getImage(){
         return this.imagen;
     }
@@ -48,8 +70,12 @@ public class ContenidoDP {
     public int getDescargas(){
         return this.nDescargas;
     }
+    public int addDescarga(){
+        this.nDescargas++;
+        return this.nDescargas;
+    }
 
-    public void setIdLectura(int num){
+    public void setIdLectura(String num){
         this.idLectura = num;
     }
     public void setGrado(int deg){
@@ -61,7 +87,10 @@ public class ContenidoDP {
     public void setTitulo(String title){
         this.titulo = title;
     }
-    public void getImage(ImageIcon img){
+    public void setTexto(String text){
+        this.titulo = text;
+    }
+    public void setImage(ImageIcon img){
         this.imagen = img;
     }
     public void setGrupo(GrupoDP group){

@@ -2,14 +2,15 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class TitularDP {
-    private int id;
-    private String nombre, tipo;
+    private int grado;
+    private String nombre, tipo, id;
     private List<GrupoDP> lGrupos;
     private List<ContenidoDP> lContenidos;
     private float avanceTitular;
 
     public TitularDP(){
-        this.id = 0;
+        this.id = "";
+        this.grado = 0;
         this.nombre ="";
         this.tipo = "";
         this.lGrupos = new LinkedList<GrupoDP>();
@@ -19,15 +20,26 @@ public class TitularDP {
 
     public TitularDP(String datos, List<GrupoDP> lGroups, List<ContenidoDP> lContent){
         String sp[] = datos.split("_");
-        this.id = Integer.parseInt(sp[0]);
+        this.id = sp[0];
         this.nombre = sp[1];
         this.tipo = sp[2];
         this.avanceTitular = Float.parseFloat(sp[3]);
+        this.grado = Integer.parseInt(sp[4]);
         this.lGrupos = lGroups;
         this.lContenidos = lContent;
     }
+    public TitularDP(String datos){
+        String sp[] = datos.split("_");
+        this.id = sp[0];
+        this.nombre = sp[1];
+        this.tipo = sp[2];
+        this.avanceTitular = Float.parseFloat(sp[3]);
+        this.grado = Integer.parseInt(sp[4]);
+        this.lGrupos = new LinkedList<GrupoDP>();
+        this.lContenidos = new LinkedList<ContenidoDP>();
+    }
 
-    public int getId(){
+    public String getId(){
         return this.id;
     }
     public String getNombre(){
@@ -35,6 +47,9 @@ public class TitularDP {
     }
     public String getTipo(){
         return this.tipo;
+    }
+    public int getGrado(){
+    	return this.grado;
     }
     public float getAvanceTitular(){
         return this.avanceTitular;
@@ -46,19 +61,22 @@ public class TitularDP {
         return this.lContenidos;
     }
 
-    public void setId(int num){
+    public void setId(String num){
         this.id = num;
     }
-    public void getNombre(String nom){
+    public void setNombre(String nom){
         this.nombre = nom;
     }
-    public void getTipo(String type){
+    public void setTipo(String type){
         this.tipo = type;
     }
-    public void getAvanceTitular(float av){
+    public void setGrado(int g){
+    	this.grado = g;
+    }
+    public void setAvanceTitular(float av){
         this.avanceTitular = av;
     }
-    public void getListaGrupos(List<GrupoDP> lGroup){
+    public void setListaGrupos(List<GrupoDP> lGroup){
         this.lGrupos = lGroup;
     }
     public void getListaContenidos(List<ContenidoDP> lContent){

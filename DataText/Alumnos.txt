@@ -1,0 +1,9 @@
+A1_amarillo_0_4
+A2_azul_0_4
+A3_verde_0_4
+A4_morado_0_5
+A5_naranja_0_5
+A6_magenta_0_5
+A7_cyan_0_6
+A8_blanco_0_6
+A9_negro_0_6
